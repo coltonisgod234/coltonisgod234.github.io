@@ -1,0 +1,169 @@
+@import url('https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@500&family=Orbitron&family=Roboto:wght@100&display=swap');
+
+.middle {
+  margin-left: 46%;
+  margin-bottom: 5px;
+}
+.middletext {
+  margin-left: 30%;
+  margin-bottom: 5px;
+}
+img {
+  width: 30%;
+  height: 30%;
+}
+
+a {
+  padding: 6px 8px 6px 16px;
+  text-decoration: none;
+  font-size: 25px;
+  font-family: "M PLUS Rounded 1c", monospace, bold;
+  color: #818181;
+  display: block;
+  transition: 500ms;
+  cursor: pointer;
+}
+
+a:hover {
+  padding: 6px 8px 6px 16px;
+  text-decoration: none;
+  font-size: 26px;
+  font-family: "M PLUS Rounded 1c", monospace, bold;
+  color: #ffffff;
+  display: block;
+  transition: 500ms;
+}
+
+html {
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  background-image: url("https://static.vecteezy.com/system/resources/previews/006/852/804/original/abstract-blue-background-simple-design-for-your-website-free-vector.jpg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+ /* The sidebar menu */
+.sidenav {
+  height: 100%; /* Full-height: remove this if you want "auto" height */
+  width: 160px; /* Set the width of the sidebar */
+  position: fixed; /* Fixed Sidebar (stay in place on scroll) */
+  z-index: 1; /* Stay on top */
+  top: 0; /* Stay at the top */
+  left: 0;
+  background-color: #000000; /* Black */
+  overflow-x: hidden; /* Disable horizontal scroll */
+  padding-top: 20px;
+  transition: 500ms;
+}
+
+/* The navigation menu links */
+.sidenav a {
+  padding: 6px 8px 6px 16px;
+  text-decoration: none;
+  font-size: 25px;
+  font-family: "M PLUS Rounded 1c", monospace, bold;
+  color: #818181;
+  display: block;
+  transition: 500ms;
+}
+
+/* When you mouse over the navigation links, change their color */
+.sidenav a:hover {
+  color: #f1f1f1;
+  font-size: 28px;
+  transition: 500ms;
+  rotate: 3deg;
+}
+
+/* Side navigation button */
+
+#sidenavhidebutton {
+  margin: 1rem;
+  margin-top: 0.25rem;
+  margin-left: 1.5rem;
+  background-color: black;
+  border: none
+}
+
+
+#sidenavhidebutton img {
+  margin-left: 2rem;
+  border: none;
+  background-color: none;
+  padding: 0;
+  margin: 0;
+  width: 1.5rem;
+  height: 1.5rem;
+  transition: 500ms;
+}
+
+#sidenavshowbutton {
+  margin: 1rem;
+  border: none
+}
+
+#sidenavshowbutton img {
+  margin-left: 2rem;
+  border: none;
+  padding: 0;
+  margin: 0;
+  width: 1.5rem;
+  height: 1.5rem;
+  transition: 500ms;
+  position: fixed;
+  background-color: #ffffff00;
+}
+
+.link {
+  padding: 6px 8px 6px 16px;
+  text-decoration: none;
+  font-size: 25px;
+  font-family: "M PLUS Rounded 1c", monospace, bold;
+  color: #818181;
+  display: block;
+  transition: 500ms;
+}
+
+p {
+  padding: 6px 8px 6px 16px;
+  text-decoration: none;
+  margin-left: 50%;
+  font-size: 25px;
+  font-family: "M PLUS Rounded 1c", monospace, bold;
+  color: #000000;
+  display: block;
+  transition: 500ms;
+}
+
+#header1 {
+  margin-left: 50%;
+  margin-bottom: 50%;
+  font-size: 40px;
+  color: white;
+}
+/* Style page content */
+.main {
+  margin-left: 160px; /* Same as the width of the sidebar */
+  padding: 0px 10px;
+}
+
+/* On smaller screens, where height is less than 450px, change the style of the sidebar (less padding and a smaller font size) */
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+} 
+
+/* ... previous CSS rules ... */
+
+.fade-in-element {
+  opacity: 0;
+  transform: translateY(20px); /* Set the initial translation distance */
+  transition: opacity 1s ease, transform 1s ease; /* Set the transition properties for both fade and translation */
+  color: white;
+}
+
+/* ... remaining CSS rules ... */
