@@ -22,7 +22,6 @@
   </div>
   
   <p>Follower Count: <span id="followerCount">Loading...</span></p>
-
   <script>
     const username = "coltonisgod234";
     const followersUrl = `https://scratch.mit.edu/users/${username}/followers/`;
@@ -30,7 +29,7 @@
     fetch(followersUrl)
       .then(response => response.text())
       .then(html => {
-        const regex = /"userFollowers":\s*(\d+)/;
+        const regex = /Followers \((\d+)\)/;
         const match = html.match(regex);
 
         if (match && match[1]) {
