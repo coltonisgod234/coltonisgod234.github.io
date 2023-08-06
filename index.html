@@ -21,7 +21,22 @@
   
   </div>
   
-  <p class="fade-in-element" id="header1">coltonisgod234</p>
+    <p id="header1">Follower Count: <span id="followerCount">Loading...</span></p>
+
+  <script>
+    const username = "your_scratch_username";
+    const apiUrl = `https://api.scratch.mit.edu/users/${username}`;
+
+    fetch(apiUrl)
+      .then(response => response.json())
+      .then(data => {
+        const followerCount = data.followers;
+        document.getElementById("followerCount").textContent = followerCount;
+      })
+      .catch(error => {
+        console.error("Error fetching follower count:", error);
+      });
+  </script>
   <p class="fade-in-element" style="margin-top: 600px;">Hi! i'm coltonisgod234 from scratch.mit.edu! I am currenly learning web devolopment</p>
   <img src="./pfp.png" class="middle"></img>
   <p class="fade-in-element" style="margin-top: 600px;">contact me at: cgwollinger@gmail.com for buisnuss and cwoll1home@gmail.com for fanmail and whatnot</p>
