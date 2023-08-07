@@ -20,31 +20,8 @@
     <a href="./documents.html">talk</a>
   
   </div>
-  
-  <p>Follower Count: <span id="followerCount">Loading...</span></p>
-  <script>
-    const username = "coltonisgod234";
-    const followersUrl = `https://scratch.mit.edu/users/${username}/followers/`;
-
-    fetch(followersUrl)
-      .then(response => response.text())
-      .then(html => {
-        const regex = /Followers \((\d+)\)/;
-        const match = html.match(regex);
-
-        if (match && match[1]) {
-          const followerCount = parseInt(match[1]);
-          document.getElementById("followerCount").textContent = followerCount;
-        } else {
-          console.log("Follower count not found on the followers page.");
-        }
-      })
-      .catch(error => {
-        console.error("Error fetching follower count:", error);
-      });
-  </script>
+  <p id="header1">👋hi!</p>
   <p class="fade-in-element" style="margin-top: 600px;">Hi! i'm coltonisgod234 from scratch.mit.edu! I am currenly learning web devolopment</p>
-  <img src="./pfp.png" class="middle"></img>
   <p class="fade-in-element" style="margin-top: 600px;">contact me at: cgwollinger@gmail.com for buisnuss and cwoll1home@gmail.com for fanmail and whatnot</p>
   <a onclick="gototop()" class="middletext" >you have reached the bottom of the page! click here to go back up.</a>
 </body>
