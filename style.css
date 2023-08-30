@@ -87,7 +87,6 @@ body {
   margin-left: 1.5rem;
   background-color: black;
   border: none;
-  opacity: 0;
 }
 
 
@@ -101,7 +100,6 @@ body {
   height: 1.5rem;
   transition: 500ms;
   display: block;
-  opacity: 1;
 }
 
 #sidenavshowbutton {
