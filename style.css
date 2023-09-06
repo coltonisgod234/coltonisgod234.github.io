@@ -152,6 +152,50 @@ p {
   padding: 0px 10px;
 }
 
+#scratchbutton {
+  padding: 6px 8px 6px 16px;
+  text-decoration: none;
+  font-size: 25px;
+  font-family: "M PLUS Rounded 1c", monospace, bold;
+  color: #818181;
+  display: block;
+  transition: 500ms;
+  background-image: "./scratch.png";
+}
+
+#scratchbutton:hover {
+  padding: 6px 8px 6px 16px;
+  text-decoration: none;
+  font-size: 25px;
+  font-family: "M PLUS Rounded 1c", monospace, bold;
+  color: #818181;
+  display: block;
+  transition: 500ms;
+  background-image: "./scratch-filled.png";
+}
+
+#gitbutton {
+  padding: 6px 8px 6px 16px;
+  text-decoration: none;
+  font-size: 25px;
+  font-family: "M PLUS Rounded 1c", monospace, bold;
+  color: #818181;
+  display: block;
+  transition: 500ms;
+  background-image: "./git.png";
+}
+
+#gitbutton {
+  padding: 6px 8px 6px 16px;
+  text-decoration: none;
+  font-size: 25px;
+  font-family: "M PLUS Rounded 1c", monospace, bold;
+  color: #818181;
+  display: block;
+  transition: 500ms;
+  background-image: "./git-filled.png";
+}
+
 /* On smaller screens, where height is less than 450px, change the style of the sidebar (less padding and a smaller font size) */
 @media screen and (max-height: 450px) {
   .sidenav {padding-top: 15px;}
