@@ -160,7 +160,7 @@ p {
   color: #818181;
   display: block;
   transition: 500ms;
-  background-image: "./scratch.png";
+  background-image: url("./scratch.png");
 }
 
 #scratchbutton img:hover {
@@ -171,7 +171,7 @@ p {
   color: #818181;
   display: block;
   transition: 500ms;
-  background-image: "./scratch-hover.png";
+  background-image: url("./scratch-hover.png");
 }
 
 #gitbutton img {
@@ -182,7 +182,7 @@ p {
   color: #818181;
   display: block;
   transition: 500ms;
-  background-image: "./github.png";
+  background-image: url("./github.png");
 }
 
 #gitbutton img:hover {
@@ -193,7 +193,7 @@ p {
   color: #818181;
   display: block;
   transition: 500ms;
-  background-image: "./github-hover.png";
+  background-image: url("./github-hover.png");
 }
 
 /* On smaller screens, where height is less than 450px, change the style of the sidebar (less padding and a smaller font size) */
