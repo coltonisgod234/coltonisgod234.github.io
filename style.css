@@ -160,7 +160,6 @@ p {
   color: #818181;
   display: block;
   transition: 500ms;
-  background-image: url("./scratch.png");
   width: 8px;
   height: 16px;
 }
@@ -173,7 +172,6 @@ p {
   color: #818181;
   display: block;
   transition: 500ms;
-  background-image: url("./scratch-hover.png");
   width: 8px;
   height: 16px;
 }
@@ -186,7 +184,6 @@ p {
   color: #818181;
   display: block;
   transition: 500ms;
-  background-image: url("./github.png");
   width: 8px;
   height: 16px;
 }
@@ -199,7 +196,6 @@ p {
   color: #818181;
   display: block;
   transition: 500ms;
-  background-image: url("./github-hover.png");
   width: 8px;
   height: 16px;
 }
