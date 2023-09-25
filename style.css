@@ -161,6 +161,8 @@ p {
   display: block;
   transition: 500ms;
   background-image: url("./scratch.png");
+  width: 8px;
+  height: 16px;
 }
 
 #scratchbutton img:hover {
@@ -172,6 +174,8 @@ p {
   display: block;
   transition: 500ms;
   background-image: url("./scratch-hover.png");
+  width: 8px;
+  height: 16px;
 }
 
 #gitbutton img {
@@ -183,6 +187,8 @@ p {
   display: block;
   transition: 500ms;
   background-image: url("./github.png");
+  width: 8px;
+  height: 16px;
 }
 
 #gitbutton img:hover {
@@ -194,6 +200,8 @@ p {
   display: block;
   transition: 500ms;
   background-image: url("./github-hover.png");
+  width: 8px;
+  height: 16px;
 }
 
 /* On smaller screens, where height is less than 450px, change the style of the sidebar (less padding and a smaller font size) */
