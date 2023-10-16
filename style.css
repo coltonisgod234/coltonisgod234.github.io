@@ -1,13 +1,17 @@
 @import url('https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@500&family=Orbitron&family=Roboto:wght@100&display=swap');
 
 .middle {
-  margin-left: 46%;
+  /* margin-left: 50%; Depricated*/
   margin-bottom: 5px;
+  text-align: center;
 }
+
 .middletext {
-  margin-left: 30%;
+  /* margin-left: 30%; Depricated*/
   margin-bottom: 5px;
+  text-align: center;
 }
+
 img {
   width: 30%;
   height: 30%;
@@ -18,7 +22,7 @@ a {
   text-decoration: none;
   font-size: 25px;
   font-family: "M PLUS Rounded 1c", monospace, bold;
-  color: #818181;
+  color: #68B0AB;
   display: block;
   transition: 500ms;
   cursor: pointer;
@@ -29,7 +33,7 @@ a:hover {
   text-decoration: none;
   font-size: 26px;
   font-family: "M PLUS Rounded 1c", monospace, bold;
-  color: #ffffff;
+  color: #70beb9;
   display: block;
   transition: 500ms;
 }
@@ -40,7 +44,8 @@ html {
 }
 
 body {
-  background-image: url("https://static.vecteezy.com/system/resources/previews/006/852/804/original/abstract-blue-background-simple-design-for-your-website-free-vector.jpg");
+  /* background-image: url("https://static.vecteezy.com/system/resources/previews/006/852/804/original/abstract-blue-background-simple-design-for-your-website-free-vector.jpg"); */
+  background-color: #333232; /* "Jet" */
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;
@@ -54,7 +59,7 @@ body {
   z-index: 1; /* Stay on top */
   top: 0; /* Stay at the top */
   left: 0;
-  background-color: #000000; /* Black */
+  background-color: #000000; /* "Verdigris" */
   overflow-x: hidden; /* Disable horizontal scroll */
   padding-top: 20px;
   transition: 500ms;
@@ -66,14 +71,14 @@ body {
   text-decoration: none;
   font-size: 25px;
   font-family: "M PLUS Rounded 1c", monospace, bold;
-  color: #818181;
+  color: #68B0AB;
   display: block;
   transition: 500ms;
 }
 
 /* When you mouse over the navigation links, change their color */
 .sidenav a:hover {
-  color: #f1f1f1;
+  color: #424242;
   font-size: 28px;
   transition: 500ms;
   rotate: 3deg;
@@ -132,19 +137,19 @@ body {
 p {
   padding: 6px 8px 6px 16px;
   text-decoration: none;
-  margin-left: 50%;
+  text-align: center;
   font-size: 25px;
   font-family: "M PLUS Rounded 1c", monospace, bold;
-  color: #FFFFFF;
+  color: #D1FFFF;
   display: block;
   transition: 500ms;
 }
 
 #header1 {
-  margin-left: 50%;
+  text-align: center;
   margin-bottom: 50%;
   font-size: 40px;
-  color: white;
+  color: #D1FFFF;
 }
 /* Style page content */
 .main {
@@ -207,6 +212,36 @@ p {
   opacity: 0;
   transform: translateY(20px); /* Set the initial translation distance */
   transition: opacity 1s ease, transform 1s ease; /* Set the transition properties for both fade and translation */
-  color: white;
 }
 
+/* Mobile Styles */
+@media only screen and (max-width: 600px) {
+  .middle {
+    margin-left: 1%;
+    margin-bottom: 5px;
+  }
+  .middletext {
+    margin-left: 1%;
+    margin-bottom: 5px;
+  }
+}
+
+ 
+
+/* Tablet Styles */
+@media only screen and (min-width: 601px) and (max-width: 1024px) {
+  /* Add tablet styles here */
+}
+
+ 
+
+/* Desktop Styles */
+@media only screen and (min-width: 1025px) {
+  /* Add desktop styles here */
+  .fade-in-element {
+    opacity: 1;
+    transform: translateY(20px); /* Set the initial translation distance */
+    /* transition: opacity 1s ease, transform 1s ease; Set the transition properties for both fade and translation */
+  }
+  
+}
