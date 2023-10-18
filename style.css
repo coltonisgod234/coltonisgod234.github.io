@@ -163,6 +163,7 @@ p {
   text-decoration: none;
   font-size: 25px;
   font-family: "M PLUS Rounded 1c", monospace, bold;
+  background-color: transparent;
   color: #818181;
   display: block;
   transition: 500ms;
@@ -174,6 +175,7 @@ p {
   text-decoration: none;
   font-size: 25px;
   font-family: "M PLUS Rounded 1c", monospace, bold;
+  background-color: transparent;
   color: #818181;
   display: block;
   transition: 500ms;
@@ -185,6 +187,7 @@ p {
   text-decoration: none;
   font-size: 25px;
   font-family: "M PLUS Rounded 1c", monospace, bold;
+  background-color: transparent;
   color: #818181;
   display: block;
   transition: 500ms;
@@ -197,6 +200,7 @@ p {
   font-size: 25px;
   font-family: "M PLUS Rounded 1c", monospace, bold;
   color: #818181;
+  background-color: transparent;
   display: block;
   transition: 500ms;
   height: 16px;
