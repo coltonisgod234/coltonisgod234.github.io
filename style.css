@@ -50,6 +50,8 @@ body {
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;
+  padding: 0px;
+  margin: 0px;
 }
 
  /* The sidebar menu */
@@ -110,6 +112,7 @@ body {
 
 #sidenavshowbutton {
   margin: 1rem;
+  margin-bottom: 15px;
   border: none
 }
 
@@ -123,6 +126,7 @@ body {
   transition: 500ms;
   position: fixed;
   background-color: #ffffff00;
+  margin-bottom: 15px;
 }
 
 .link {
@@ -206,17 +210,25 @@ p {
   height: 16px;
 }
 
-/* On smaller screens, where height is less than 450px, change the style of the sidebar (less padding and a smaller font size) */
-@media screen and (max-height: 450px) {
-  .sidenav {padding-top: 15px;}
-  .sidenav a {font-size: 18px;}
-} 
-
-
 .fade-in-element {
   opacity: 0;
   transform: translateY(20px); /* Set the initial translation distance */
   transition: opacity 1s ease, transform 1s ease; /* Set the transition properties for both fade and translation */
+}
+
+#footerlicense {
+  line-height: 4px;
+}
+
+#footerdiv {
+  background-color: #000000;
+  padding-bottom: 20px;
+}
+
+/* On smaller screens, where height is less than 450px, change the style of the sidebar (less padding and a smaller font size) */
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
 }
 
 /* Mobile Styles */
@@ -231,14 +243,10 @@ p {
   }
 }
 
- 
-
 /* Tablet Styles */
 @media only screen and (min-width: 601px) and (max-width: 1024px) {
   /* Add tablet styles here */
 }
-
- 
 
 /* Desktop Styles */
 @media only screen and (min-width: 1025px) {
