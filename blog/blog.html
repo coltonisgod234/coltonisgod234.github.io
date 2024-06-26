@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width">
+        <title>coltonisgod234.github.io</title>
+        <link href="blog.css" rel="stylesheet" type="text/css" />
+    </head>
+
+    <body>
+        <div>
+            <ul id="articleslist"></ul>
+            <div id = "articleDisplay"></div>
+        </div>
+    </body>
+
+    <button onclick="fetchItems()">Fetch all articles</button>
+    <button onclick="loadArticle('blog1.md')">Load blog1.md</button>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script src="blog.js", onload="console.log('Main script loaded.')"></script>
+</html>
