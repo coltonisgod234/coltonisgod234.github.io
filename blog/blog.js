@@ -17,7 +17,7 @@ articles = [
 function loadArticle(filename) {
     // Check if marked is loaded before using it
     if (typeof marked !== 'undefined') {
-        const fileContent = fetch(`../public/blogs/${filename}`)
+        const fileContent = fetch(`../public/blogs/${filename}`).responce
         const htmlContent = marked.parse(fileContent); // Use marked.parse() for parsing
         
         // Display the HTML content
