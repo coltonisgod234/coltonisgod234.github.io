@@ -14,10 +14,10 @@ articles = [
     {"name":"Blog 1","url":"../public/blogs/blog1.md"}
 ]
 
-function loadArticle(filename) {
+async function loadArticle(filename) {
     // Check if marked is loaded before using it
     if (typeof marked !== 'undefined') {
-        const fileContent = fetch(`../public/blogs/${filename}`).responce
+        const fileContent = await fetch(`../public/blogs/${filename}`).responce;
         const htmlContent = marked.parse(fileContent); // Use marked.parse() for parsing
         
         // Display the HTML content
