@@ -1,0 +1,69 @@
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>artemis website homepage</title>
+  <link href="style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<marquee scrollamount=30 direction=right>
+  <h1>
+    <span>Now playing...</span>
+  </h1>
+</marquee>
+<div id="nowplaying">Loading from ListenBrainz (WAIT)...</div>
+<script>
+  // UNUSED
+async function isShitFuckingPlaying() {
+  const username = "artemiscodes";
+  const lbURL = `https://api.listenbrainz.org/1/user/${username}/playing-now`;
+  const res = await fetch(lbURL)
+  const data = await res.json()
+  console.log(data)
+  if (data.payload.count == 0) {
+    console.log("10000))% not listening to shit")
+    return false
+  } else {
+    console.log("Dunno but I think we " + data.payload.playing_now)
+    return data.payload.playing_now
+  }
+}
+
+// We're using listenbrainz because ACTUALLY FUCK LASTFM SO HARD
+async function getNowPlaying() {
+  const username = "artemiscodes";
+  //const lbURL = `https://api.listenbrainz.org/1/user/${username}/listens?count=1`;
+  const lbURL = `https://api.listenbrainz.org/1/user/${username}/playing-now`;
+
+  try {
+    const res = await fetch(lbURL);
+    if (!res.ok) throw new Error("Network response not OK");
+
+    const data = await res.json();
+    console.log(data)
+    const listens = data.payload?.listens;
+
+    if (!data.payload.playing_now || listens[0] == undefined) {
+      document.getElementById("nowplaying").textContent = "Nothing's playing according to ListenBrainz.";
+      return;
+    }
+
+    const latest = listens[0];
+
+    const track = latest.track_metadata;
+    const artist = track.artist_name || "Unknown artist";
+    const title = track.track_name || "Unknown track";
+    const album = track.release_name || `${artist}'s singles`;
+    // FUCK IMAGES WE DON'T NEED ALBUM ART.
+
+    document.getElementById("nowplaying").innerHTML =
+      `\"<big><b>${title}</b></big>\"<br>by <i>${artist}</i><br>from ${album}`;
+  } catch (err) {
+    console.error("ListenBrainz fetch error:", err);
+    document.getElementById("nowplaying").textContent = "Error loading music status.";
+  }
+}
+
+window.onload = getNowPlaying;
+</script>
+</html>

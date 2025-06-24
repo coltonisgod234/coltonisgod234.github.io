@@ -1,0 +1,57 @@
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>artemis website homepage</title>
+  <link href="style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<div id="recentlyPlayed">
+  <marquee scrollamount=30 direction=right>
+    <h2>Recently Played</h2>
+  </marquee>
+  <ul id="recentList">Loading...</ul>
+</div>
+
+<script>
+async function getRecentListens() {
+  const username = "artemiscodes";
+  const lbURL = `https://api.listenbrainz.org/1/user/${username}/listens?count=7`;
+
+  try {
+    const res = await fetch(lbURL);
+    if (!res.ok) throw new Error("Network response not OK");
+
+    const data = await res.json();
+    const listens = data.payload?.listens || [];
+
+    if (listens.length === 0) {
+      document.getElementById("recentList").textContent = "No recent listens.";
+      return;
+    }
+
+    const listEl = document.getElementById("recentList");
+    listEl.innerHTML = ""; // clear loading text
+
+    listens.forEach((listen) => {
+      const track = listen.track_metadata;
+      const artist = track.artist_name || "Unknown artist";
+      const title = track.track_name || "Unknown track";
+      const album = track.release_name || "Unknown album";
+
+      const li = document.createElement("li");
+      li.innerHTML = `<big>"<b>${title}</b>"</big><br>by <i>${artist}</i><br> from ${album}`;
+      listEl.appendChild(li);
+    });
+  } catch (err) {
+    console.error("ListenBrainz fetch error:", err);
+    document.getElementById("recentList").textContent = "Error loading recent listens.";
+  }
+}
+
+window.onload = () => {
+  getRecentListens();
+};
+</script>
+
+</html>
