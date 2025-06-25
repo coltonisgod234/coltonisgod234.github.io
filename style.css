@@ -169,3 +169,11 @@ summary{
 tiny{
     font-size: 0.3em;
 }
+
+table, th, td {
+  border: 1px solid;
+}
+
+table {
+  border-collapse: collapse;
+}
