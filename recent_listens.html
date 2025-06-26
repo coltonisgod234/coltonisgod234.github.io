@@ -6,11 +6,22 @@
   <link href="style.css" rel="stylesheet" type="text/css" />
 </head>
 
+<script>
+  if (window.fetch) {
+    console.log("Fetch is supported");
+  } else {
+    document.getElementById("recentList").innerText = "Fetch no work pls upgrade browser";
+  }
+</script>
+  
 <div id="recentlyPlayed">
   <marquee scrollamount=30 direction=right>
     <h2>Recently Played</h2>
   </marquee>
   <ul id="recentList">Loading...</ul>
+  <noscript>
+    Your browser (somehow) does not support javascript. Enable scriptng or switch to a newer browser. You do you.
+  </noscript>
 </div>
 
 <script>

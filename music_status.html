@@ -6,11 +6,22 @@
   <link href="style.css" rel="stylesheet" type="text/css" />
 </head>
 
+<script>
+  if (window.fetch) {
+    console.log("Fetch is supported");
+  } else {
+    document.getElementById("nowplaying").innerText = "Fetch no work pls upgrade browser";
+  }
+</script>
+  
 <marquee scrollamount=30 direction=right>
   <h1>
     <span>Now playing...</span>
   </h1>
 </marquee>
+<noscript>
+  Your browser (somehow) does not support javascript. Enable scriptng or switch to a newer browser. You do you.
+</noscript>
 <div id="nowplaying">Loading from ListenBrainz (WAIT)...</div>
 <script>
   // UNUSED
