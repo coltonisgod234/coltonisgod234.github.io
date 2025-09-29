@@ -1,0 +1,39 @@
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="/style.css">
+    </head>
+    <table>
+    <thead>
+        <tr>
+        <th>Date</th>
+        <th>Track</th>
+        <th>Album</th>
+        <th>Artist</th>
+        <th>Quote</th>
+        </tr>
+    </thead>
+    <tbody>
+        <!-- JavaScript will populate this -->
+    </tbody>
+    </table>
+
+    <script>
+    fetch('qoutes.tsv')
+    .then(res => res.text())
+    .then(text => {
+        const rows = text.trim().split('\n');
+        const tableBody = document.querySelector('tbody');
+
+        rows.slice(1).forEach(row => {  // skip header
+        const cols = row.split('\t');
+        const tr = document.createElement('tr');
+        cols.forEach(col => {
+            const td = document.createElement('td');
+            td.textContent = col;
+            tr.appendChild(td);
+        });
+        tableBody.appendChild(tr);
+        });
+    });
+    </script>
+</html>

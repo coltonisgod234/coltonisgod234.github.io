@@ -102,7 +102,7 @@ body{
           rgba(0, 0, 0, 0.7),
           rgba(0, 0, 0, 0.7)
         ),
-        url("https://upload.wikimedia.org/wikipedia/commons/thumb/1/12/Aroace_flag.svg/1280px-Aroace_flag.svg.png");
+        url("https://upload.wikimedia.org/wikipedia/commons/thumb/1/12/Aroace_flag.svg/1280px-Aroace_flag.svg.png"), repeat;
     border: 24px black solid;
     animation: gamer 1s linear infinite;
     -ms-overflow-style: none;  /* IE and Edge */

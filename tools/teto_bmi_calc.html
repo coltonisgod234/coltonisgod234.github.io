@@ -1,0 +1,141 @@
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Teto BMI calculator</title>
+  <link href="/style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<a href="/tools.html"><-- back to tools</a>
+
+<marquee direction=left scrollamount=30><h1>THE FUCK AM I DOING WITH MY LIFE??! I MADE THIS AT 10 PM AND STAYED UP PAST MY BEDTIME!</h1></marquee>
+
+<label for="mass">Mass (kg):</label>
+<input type="number" id="mass" name="mass" value="47" step="0.01">
+
+<br/>
+
+<!-- FUCKING HUMAN SHIT -->
+<label for="humanFrac">Human fraction:</label>
+<input type="range" id="humanFrac" name="humanFrac" min="0" max="1" step="0.01" value="0.33"
+    oninput="document.getElementById('humanFracVal').textContent = this.value">
+<span id="humanFracVal">...</span>
+<br/>
+
+<label for="height">Human height (metres):</label>
+<input type="number" id="height" name="height" value="1.595" step="0.001">
+<br/>
+
+<!-- FUCKING BREAD STUFF -->
+<label for="breadFrac">Bread fraction:</label>
+<input type="range" id="breadFrac" name="breadFrac" min="0" max="1" step="0.01" value="0.33"
+    oninput="document.getElementById('breadFracVal').textContent = this.value">
+<span id="breadFracVal">...</span>
+<br/>
+
+<label for="breadExp">Bread exponent:</label>
+<!-- use this to use a slider instead of a box -->
+<!-- <input type="range" id="breadExp" name="breadExp" min="0" max="1" step="0.01" value="0.66"
+    oninput="document.getElementById('breadExpVal').textContent = this.value">
+<span id="breadExpVal">...</span> -->
+
+<!-- good HTML -->
+<input type="number" id="breadExp" name="breadExp" step="0.01" value="0.66">
+<br/>
+
+<label for="breadLen">Bread length (metres):</label>
+<input type="number" id="breadLen" name="breadLen" value="0.127" step="0.001">
+<br/>
+
+<!-- FUCKING BAT STUFF -->
+<label for="batFrac">Bat fraction:</label>
+<input type="range" id="batFrac" name="batFrac" min="0" max="1" step="0.01" value="0.33"
+    oninput="document.getElementById('batFracVal').textContent = this.value">
+<span id="batFracVal">...</span>
+<br/>
+
+<label for="batLen">Bat length:</label>
+<input type="number" id="batLen" name="batLen" value="0.085" step="0.001">
+
+<br/>
+
+<button onclick="run()">calculate BMI</button>
+
+<br/>
+
+<span>TOTAL:</span>
+<span id="result">RESULT GOES HERE</span>
+<br/>
+
+<span>BREAD BMI:</span>
+<span id="breadRes">RESULT GOES HERE</span>
+<br/>
+
+<span>BAT BMI:</span>
+<span id="batRes">RESULT GOES HERE</span>
+<br/>
+
+<span>HUMAN BMI:</span>
+<span id="humanRes">RESULT GOES HERE</span>
+<br/>
+
+
+<!-- SOME FUCKING JAVASCRIPT -->
+ <script>
+    // excuse my bad JS
+
+    function teto_bmi(
+        // general stuff
+        total_mass,
+        human_height,
+        bat_length,
+        bread_length, bread_exponent,
+
+        // fractions
+        human_part, bat_part, bread_part,
+    ) {
+        // human BMI
+        let human_mass = total_mass * human_part;
+        let human_bmi = human_mass / human_height**2;
+        
+        // Bat BMI
+        let bat_mass = total_mass * bat_part
+        let bat_bmi = bat_mass / bat_length**2
+
+        // Bread BMI
+        let bread_mass = total_mass * bread_part
+        let bread_bmi = bread_mass / bread_length**bread_exponent
+
+        // Weighted chimera BMI
+        let chimera_bmi = human_bmi + bat_bmi + bread_bmi
+
+        return {
+            human: human_bmi,
+            bread: bread_bmi,
+            bat: bat_bmi,
+            total: chimera_bmi
+        }
+    }
+
+    function run() {
+        // general
+        let mass = parseFloat(document.getElementById("mass").value);
+
+        // fractions
+        let humanFrac = parseFloat(document.getElementById("humanFrac").value);
+        let breadFrac = parseFloat(document.getElementById("breadFrac").value);
+        let breadExp = parseFloat(document.getElementById("breadExp").value);
+        let breadLen = parseFloat(document.getElementById("breadLen").value);
+        let batFrac = parseFloat(document.getElementById("batFrac").value);
+        let batLen = parseFloat(document.getElementById("batLen").value);
+
+        // stuff
+        let height = parseFloat(document.getElementById("height").value);
+
+        // get result
+        let result = teto_bmi(mass, height, batLen, breadLen, breadExp, humanFrac, batFrac, breadFrac);
+        document.getElementById("humanRes").textContent = result.human;
+        document.getElementById("batRes").textContent = result.bat;
+        document.getElementById("breadRes").textContent = result.bread;
+        document.getElementById("result").textContent = result.total;
+    }
+</script>
